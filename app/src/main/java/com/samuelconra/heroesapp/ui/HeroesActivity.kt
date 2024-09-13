@@ -24,20 +24,24 @@ class HeroesActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_heroes)
 
+        // Búsqueda de elementos por ID
         publisherName = findViewById(R.id.publisherName)
         publisherDescription = findViewById(R.id.publisherDesc)
         publisherBackground = findViewById(R.id.publisherBackground)
         heroesRecyclerView = findViewById(R.id.heroesRecyclerView)
 
+        // Obtención de heroes por Publisher ID
         val publisherID = intent.getIntExtra("publisherId", 0)
         val publisher = Publisher.publishers.firstOrNull { it.id == publisherID }
         val heroes = Heroe.heroes.filter { it.publisherId == publisherID }
 
+        // Modificación de información basado en Publisher
         publisherName.text = publisher?.name
         val imageId = this.resources.getIdentifier(publisher?.background, "drawable", this.packageName)
         publisherBackground.setImageResource(imageId)
         publisherDescription.text = publisher?.description
 
+        // RecyclerView acomodo y llenado de información
         heroesRecyclerView.adapter = HeroeAdapter(heroes)
         heroesRecyclerView.layoutManager = GridLayoutManager(this, 3)
     }

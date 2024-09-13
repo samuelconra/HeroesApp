@@ -58,7 +58,7 @@ class PublisherActivity : AppCompatActivity() {
         }
         publisherRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        // Duncionalidad botón logOut
+        // Funcionalidad botón logOut
         logoutBtn.setOnClickListener {
             val editor = sharedPreferences.edit()
             editor.remove("isLoggedIn")

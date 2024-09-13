@@ -21,19 +21,23 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        // Obtención de preferencias
         val sharedPreferences = getSharedPreferences("PREFS", Context.MODE_PRIVATE)
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
 
+        // LogIn automático
         val intent = Intent(this@MainActivity, PublisherActivity::class.java)
         if (isLoggedIn) {
             startActivity(intent)
             finish()
         }
 
+        // Búsqueda de elementos por Id
         logInBtn = findViewById(R.id.logInBtn)
         emailEt = findViewById(R.id.emailEt)
         passwordEt = findViewById(R.id.passwordEt)
 
+        // Acción de login Button
         logInBtn.setOnClickListener {
             val email = emailEt.text.toString()
             val password = passwordEt.text.toString()
@@ -51,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // validación de usuarios
             val user = User.staticUsers.firstOrNull{ user ->
                 user.email == email && user.password == password
             }
