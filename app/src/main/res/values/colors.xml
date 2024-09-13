@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="black_login">#95000000</color>
+    <color name="white_hint">#80FFFFFF</color>
+    <color name="red_login">#94020B</color>
+    <color name="red_marvel">#ff1620</color>
+    <color name="blue_dc">#0277F1</color>
+    <color name="white_bg">#f4f5f7</color>
+    <color name="line_color">#DBDBDB</color>
+</resources>

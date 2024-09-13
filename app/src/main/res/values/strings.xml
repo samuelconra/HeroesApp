@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Heroes App</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="publisher_text">Publisher</string>
+    <string name="loginBtn_text">Log In</string>
+    <string name="heroes_title">Heroes</string>
+</resources>
